@@ -10,7 +10,7 @@ const IndexPage = () => {
     const [allPages, setAllPages] = useState([]);
     const [filteredPages, setFilteredPages] = useState([]);
     const [uniqueTags, setUniqueTags] = useState([]);
-    const [activeTag, setActiveTag] = useState('全部');
+    const [activeTag, setActiveTag] = useState('星球');
     const [isRefreshing, setIsRefreshing] = useState(false);
     const [titleName, setTitleName] = useState(ENV_NAV_NAME);
 
@@ -31,7 +31,7 @@ const IndexPage = () => {
         if (!Array.isArray(pages)) {
             return [];
         }
-        if (tag === '全部') {
+        if (tag === '星球') {
             return pages;
         }
         return pages.filter((page) => {
@@ -188,7 +188,7 @@ const IndexPage = () => {
             <header className='blur'>
                 <div id='title'>
                     <div id="left">
-                        <img src="/logo.webp" alt="图片加载失败" />
+                        <img src="/logo.webp" alt="迷体加载失败" />
                         <h1>{titleName}<br />
                             Nav
                         </h1>
@@ -197,7 +197,7 @@ const IndexPage = () => {
                             type="button"
                             onClick={handleRefresh}
                             disabled={isRefreshing}
-                            aria-label="刷新数据"
+                            aria-label="刷新黑洞"
                         />
                     </div>
                     <div id="right">
@@ -212,7 +212,7 @@ const IndexPage = () => {
                         type="button"
                         className={`nav-button ${activeTag === '全部' ? 'active' : ''}`}
                         onClick={() => setActiveTag('全部')}
-                    >全部</button>
+                    >星球</button>
                     {uniqueTags && uniqueTags.map((tag) => (
                         <button
                             type="button"
@@ -270,8 +270,8 @@ const IndexPage = () => {
             </main>
             <footer className='blur'>
                 <img src="/next.svg" alt="图片加载失败" />
-                <a href="https://vercel.com/kailous/rain-forest-notion-nav"><img src="/vercel.svg" alt="图片加载失败" /></a>
-                <a href="https://github.com/kailous/RainForest-Notion-Nav"><img src="/github.svg" alt="图片加载失败" /></a>
+                <a href="https://b.miti.cc.cd/"><img src="/vercel.svg" alt="迷体加载失败" /></a>
+                <a href="https://b.miti.cc.cd/"><img src="/github.svg" alt="迷体加载失败" /></a>
                 <p>Notion database nav for RainForest, developed by Kailous.</p>
             </footer>
         </>
